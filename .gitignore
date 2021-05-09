@@ -1,0 +1,14 @@
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Env
+ui/.env.*
+!ui/.env.example
+api/.env.*
+!api/.env.example
+db/.env.*
+!db/.env.example

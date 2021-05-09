@@ -1,0 +1,30 @@
+version: '3.5'
+services:
+  api:
+    image: node:lts-buster
+    command: npm run start:debug
+    ports:
+      - 3000:3000
+      - 9229:9229
+    networks:
+      - net_till
+    volumes:
+      - ./api:/app
+    working_dir: /app
+    restart: unless-stopped
+  ui:
+    image: node:lts-buster
+    command: npm run start
+    ports:
+      - 80:3000
+    networks:
+      - net_till
+    volumes:
+      - ./ui:/app
+    working_dir: /app
+    restart: unless-stopped
+volumes:
+  db_till:
+networks:
+  net_till:
+    
